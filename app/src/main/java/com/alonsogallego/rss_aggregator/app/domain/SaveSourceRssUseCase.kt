@@ -1,12 +1,12 @@
 package com.alonsogallego.rss_aggregator.app.domain
 
-class SaveSourceRssUseCase {
+class SaveSourceRssUseCase(private val sourceRssRepository: SourceRssRepository) {
 
-    suspend fun execute(): SourceRss {
-
+    suspend fun execute(name: String, url: String) {
+        sourceRssRepository.create(name, url)
     }
 
-    data class SourceRss (
+    data class SourceRss(
         val name: String,
         val url: String
     )
