@@ -1,4 +1,4 @@
-package com.app.data.db
+package com.alonsogallego.app.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

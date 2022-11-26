@@ -1,10 +1,14 @@
 package com.alonsogallego.rss_aggregator.app.data.local.db
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 const val TABLE_NAME_RSS = "rss"
 
 @Entity(tableName = TABLE_NAME_RSS)
-class SourceRssEntity {
-    @
-}
+data class SourceRssEntity (
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    @ColumnInfo val webName: String,
+    @ColumnInfo val url: String
+)
