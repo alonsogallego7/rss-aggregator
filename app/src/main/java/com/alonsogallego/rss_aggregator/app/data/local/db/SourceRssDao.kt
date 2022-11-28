@@ -6,5 +6,5 @@ import androidx.room.Insert
 @Dao
 interface SourceRssDao {
     @Insert
-    fun create(webName: String, url: String)
+    fun create(sourceRss: SourceRssEntity)
 }

@@ -4,6 +4,11 @@ import com.alonsogallego.rss_aggregator.app.data.local.SourceRssLocalDataSource
 
 class SourceRssDbLocalDataSource(private val dao: SourceRssDao): SourceRssLocalDataSource {
     override fun create(webName: String, url: String) {
-        dao.create(webName, url)
+        val sourceRss = SourceRssEntity(
+            0,
+            webName,
+            url
+        )
+        dao.create(sourceRss)
     }
 }
