@@ -1,6 +1,6 @@
-package com.alonsogallego.rss_aggregator.app.data
+package com.alonsogallego.rss_aggregator.data
 
-import com.alonsogallego.rss_aggregator.app.data.local.SourceRssLocalDataSource
+import com.alonsogallego.rss_aggregator.data.local.SourceRssLocalDataSource
 
 class SourceRssDataRepository(private val localSource: SourceRssLocalDataSource) {
 

@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.alonsogallego.app.data.db.AppDataBase
-import com.alonsogallego.rss_aggregator.app.data.SourceRssDataRepository
-import com.alonsogallego.rss_aggregator.app.data.local.db.SourceRssDbLocalDataSource
+import com.alonsogallego.rss_aggregator.data.SourceRssDataRepository
+import com.alonsogallego.rss_aggregator.data.local.db.SourceRssDbLocalDataSource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
