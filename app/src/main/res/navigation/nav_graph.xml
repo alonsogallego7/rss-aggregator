@@ -11,6 +11,34 @@
         android:label="Rss Feed"
         tools:layout="@layout/fragment_rss_feed">
 
+        <action
+            android:id="@+id/action_rssfeed_to_rssmanagement"
+            app:destination="@id/rssManagement">
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rssManagement"
+        android:name="com.alonsogallego.rss_aggregator.presentation.RssManagementFragment"
+        android:label="Rss Management"
+        tools:layout="@layout/fragment_rss_management">
+
+        <action
+            android:id="@+id/action_rssmanagement_to_profile"
+            app:destination="@id/profile">
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.alonsogallego.rss_aggregator.presentation.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
     </fragment>
 
 </navigation>
