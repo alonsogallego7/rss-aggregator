@@ -2,30 +2,58 @@ package com.alonsogallego.rss_aggregator.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import com.alonsogallego.rss_aggregator.NavGraphDirections
 import com.alonsogallego.rss_aggregator.R
-import com.google.android.material.navigation.NavigationBarView
+import com.alonsogallego.rss_aggregator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        NavigationBarView.OnItemSelectedListener { item ->
-            when(item.itemId) {
+        val rssFeedFragment = RssFeedFragment()
+        val rssManagementFragment = RssManagementFragment()
+        val profileFragment = ProfileFragment()
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.rss_feed -> {
-                    // Respond to navigation item 1 click
+                    navigateToRssFeed()
                     true
                 }
-                R.id.management -> {
-                    // Respond to navigation item 2 click
+                R.id.rss_management -> {
+                    navigateToRssManagement()
                     true
                 }
                 R.id.profile -> {
-                    // Respond to navigation item 2 click
+                    navigateToProfile()
                     true
                 }
                 else -> false
             }
         }
+    }
+
+    private fun navigateToRssFeed() {
+        findNavController(R.id.fragment_container_view).navigate(
+            NavGraphDirections.toRssfeed()
+        )
+    }
+
+    private fun navigateToRssManagement() {
+        findNavController(R.id.fragment_container_view).navigate(
+            NavGraphDirections.toRssmanagement()
+        )
+    }
+
+    private fun navigateToProfile() {
+        findNavController(R.id.fragment_container_view).navigate(
+            RssFeedFragmentDirections.toProfile()
+        )
     }
 }

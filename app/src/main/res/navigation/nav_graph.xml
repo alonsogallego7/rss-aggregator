@@ -2,20 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/rssFeed">
+
+    <action
+        android:id="@+id/to_rssfeed"
+        app:destination="@id/rssFeed"/>
+
+    <action
+        android:id="@+id/to_rssmanagement"
+        app:destination="@id/rssManagement"/>
+
+    <action
+        android:id="@+id/to_profile"
+        app:destination="@id/profile"/>
 
     <fragment
         android:id="@+id/rssFeed"
         android:name="com.alonsogallego.rss_aggregator.presentation.RssFeedFragment"
         android:label="Rss Feed"
         tools:layout="@layout/fragment_rss_feed">
-
-        <action
-            android:id="@+id/action_rssfeed_to_rssmanagement"
-            app:destination="@id/rssManagement">
-
-        </action>
 
     </fragment>
 
@@ -24,12 +30,6 @@
         android:name="com.alonsogallego.rss_aggregator.presentation.RssManagementFragment"
         android:label="Rss Management"
         tools:layout="@layout/fragment_rss_management">
-
-        <action
-            android:id="@+id/action_rssmanagement_to_profile"
-            app:destination="@id/profile">
-
-        </action>
 
     </fragment>
 

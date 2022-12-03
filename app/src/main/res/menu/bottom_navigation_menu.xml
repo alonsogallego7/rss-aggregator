@@ -9,7 +9,7 @@
     </item>
 
     <item
-        android:id="@+id/management"
+        android:id="@+id/rss_management"
         android:enabled="true"
         android:icon="@drawable/ic_menu"
         android:title="@string/nav_menu_item_2">
