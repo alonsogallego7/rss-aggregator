@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val rssFeedFragment = RssFeedFragment()
-        val rssManagementFragment = RssManagementFragment()
-        val profileFragment = ProfileFragment()
-
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.rss_feed -> {
