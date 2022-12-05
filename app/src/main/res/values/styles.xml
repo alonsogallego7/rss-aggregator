@@ -3,5 +3,14 @@
     <style name="bottom_nav_menu" parent="Theme.MaterialComponents">
         <item name="backgroundTint">@color/grey</item>
     </style>
-    <style name="button" parent=""
+
+    <style name="button_add">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="button_cancel">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
 </resources>
