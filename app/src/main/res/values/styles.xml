@@ -21,4 +21,9 @@
         <item name="android:textColor">@color/purple_700</item>
         <item name="android:textSize">30dp</item>
     </style>
+
+    <style name="bottom_sheet">
+        <item name="cornerSize">15dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
 </resources>
