@@ -5,4 +5,5 @@
     <string name="nav_menu_item_2"> Gestión </string>
     <string name="nav_menu_item_3"> Mi Perfil </string>
     <string name="toolbar_item_1"> Save RSS</string>
+    <string name="title_management"> Gestión RSS </string>
 </resources>
