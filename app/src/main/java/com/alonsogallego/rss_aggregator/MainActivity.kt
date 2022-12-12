@@ -1,23 +1,37 @@
 package com.alonsogallego.rss_aggregator
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import com.alonsogallego.rss_aggregator.app.data.remote.api.ApiClient
+import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import com.alonsogallego.app.data.db.AppDataBase
+import com.alonsogallego.rss_aggregator.data.SourceRssDataRepository
+import com.alonsogallego.rss_aggregator.data.local.db.SourceRssDbLocalDataSource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
-    val apiClient = ApiClient()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         GlobalScope.launch {
-            val rss = apiClient.getRss("https://e00-marca.uecdn.es/rss/futbol/sevilla.xml")
-            Log.d("@dev", "rss: $rss")
+            SourceRssDataRepository(SourceRssDbLocalDataSource(DataBaseSingleton.getInstance(applicationContext).sourceRssDao())).create("Marca Segunda División", "https://e00-marca.uecdn.es/rss/futbol/segunda-division.xml" )
         }
+    }
+
+    object DataBaseSingleton {
+        private var db: AppDataBase? = null
+
+        fun getInstance(context: Context): AppDataBase {
+            if (db == null) {
+                db = Room.databaseBuilder(
+                    context,
+                    AppDataBase::class.java, "db-sourcerss"
+                ).build()
+            }
+            return db!!
+        }
+
     }
 }
