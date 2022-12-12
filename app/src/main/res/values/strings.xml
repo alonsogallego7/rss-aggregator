@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">rss-aggregator</string>
+
+    <string name="nav_menu_item_1"> RSS </string>
+    <string name="nav_menu_item_2"> Gestión </string>
+    <string name="nav_menu_item_3"> Mi Perfil </string>
 </resources>

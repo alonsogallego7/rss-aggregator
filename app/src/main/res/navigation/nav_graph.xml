@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rssFeed">
+
+    <action
+        android:id="@+id/to_rssfeed"
+        app:destination="@id/rssFeed"/>
+
+    <action
+        android:id="@+id/to_rssmanagement"
+        app:destination="@id/rssManagement"/>
+
+    <action
+        android:id="@+id/to_profile"
+        app:destination="@id/profile"/>
+
+    <fragment
+        android:id="@+id/rssFeed"
+        android:name="com.alonsogallego.rss_aggregator.presentation.RssFeedFragment"
+        android:label="Rss Feed"
+        tools:layout="@layout/fragment_rss_feed">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rssManagement"
+        android:name="com.alonsogallego.rss_aggregator.presentation.RssManagementFragment"
+        android:label="Rss Management"
+        tools:layout="@layout/fragment_rss_management">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.alonsogallego.rss_aggregator.presentation.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
+    </fragment>
+
+</navigation>

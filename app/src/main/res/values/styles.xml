@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="bottom_nav_menu" parent="Theme.MaterialComponents">
+        <item name="backgroundTint">@color/grey</item>
+    </style>
+</resources>
