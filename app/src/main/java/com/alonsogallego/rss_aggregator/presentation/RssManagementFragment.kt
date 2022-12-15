@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.alonsogallego.rss_aggregator.R
 import com.alonsogallego.rss_aggregator.databinding.FragmentRssManagementBinding
+import com.google.android.material.snackbar.Snackbar
 
 class RssManagementFragment: Fragment() {
 
@@ -31,6 +32,10 @@ class RssManagementFragment: Fragment() {
         }
 
         return binding?.root
+    }
+
+    fun setupSnackbar() {
+        Snackbar.make(requireView(), "Guardado correctamente", Snackbar.LENGTH_LONG).show()
     }
 
     private fun navigateToBottomSheetSave() {

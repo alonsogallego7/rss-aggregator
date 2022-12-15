@@ -28,15 +28,16 @@ class BottomSheetSaveFragment: BottomSheetDialogFragment() {
         viewModel = RssFactory().getRssManagementViewModel(
             requireContext()
         )
-        setupObservers(view)
+        setupObservers()
         setupButtons()
     }
 
-    private fun setupObservers(view: View) {
+    private fun setupObservers() {
         val rssManagementSubscriber =
             Observer<RssManagementViewModel.SourceRssUiState> {uiState ->
                 if(uiState.isSuccess) {
-                    Snackbar.make(view, "Guardado correctamente", Snackbar.LENGTH_LONG).show()
+                    this.dismiss()
+                    Snackbar.make(requireView(), "Guardado correctamente", Snackbar.LENGTH_LONG).show()
                 }
             }
 
