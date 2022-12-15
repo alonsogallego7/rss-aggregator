@@ -4,17 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.Observer
 import com.alonsogallego.rss_aggregator.databinding.FragmentBottomSheetSaveBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
-import java.util.Observer
 
 class BottomSheetSaveFragment: BottomSheetDialogFragment() {
 
     private var viewModel: RssManagementViewModel? = null
     private var binding: FragmentBottomSheetSaveBinding? = null
-    private var snackbar: Snackbar? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +28,28 @@ class BottomSheetSaveFragment: BottomSheetDialogFragment() {
         viewModel = RssFactory().getRssManagementViewModel(
             requireContext()
         )
+        setupObservers(view)
+        setupButtons()
     }
 
-    private fun setupObservers() {
+    private fun setupObservers(view: View) {
         val rssManagementSubscriber =
             Observer<RssManagementViewModel.SourceRssUiState> {uiState ->
-                if (uiSta)
+                if(uiState.isSuccess) {
+                    Snackbar.make(view, "Guardado correctamente", Snackbar.LENGTH_LONG).show()
+                }
             }
+
+        viewModel?.sourceRssPublisher?.observe(viewLifecycleOwner, rssManagementSubscriber)
+    }
+
+    private fun setupButtons() {
+        binding?.buttonAdd?.setOnClickListener {
+            viewModel?.saveSourceRss(binding?.nameTextInput?.text.toString(), binding?.urlTextInput?.text.toString())
+        }
+
+        binding?.buttonCancel?.setOnClickListener {
+            this.dismiss()
+        }
     }
 }
