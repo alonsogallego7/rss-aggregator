@@ -10,4 +10,5 @@
     <string name="input_rss_url">URL RSS</string>
     <string name="button_add">Añadir</string>
     <string name="button_cancel">Cancelar</string>
+    <string name="snackbar_saved_text">Guardado correctamente</string>
 </resources>

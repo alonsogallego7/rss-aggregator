@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import com.alonsogallego.rss_aggregator.R
 import com.alonsogallego.rss_aggregator.databinding.FragmentBottomSheetSaveBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
@@ -37,7 +38,7 @@ class BottomSheetSaveFragment: BottomSheetDialogFragment() {
             Observer<RssManagementViewModel.SourceRssUiState> {uiState ->
                 if(uiState.isSuccess) {
                     this.dismiss()
-                    Snackbar.make(requireView(), "Guardado correctamente", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(requireActivity().findViewById(R.id.main_view), getString(R.string.snackbar_saved_text), Snackbar.LENGTH_LONG).show()
                 }
             }
 
