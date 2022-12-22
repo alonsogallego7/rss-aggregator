@@ -5,22 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.alonsogallego.rss_aggregator.R
-import com.alonsogallego.rss_aggregator.databinding.FragmentBottomSheetSaveBinding
+import com.alonsogallego.rss_aggregator.databinding.FragmentRssFormBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 
-class BottomSheetSaveFragment: BottomSheetDialogFragment() {
+class RssFormFragment: BottomSheetDialogFragment() {
 
     private var viewModel: RssManagementViewModel? = null
-    private var binding: FragmentBottomSheetSaveBinding? = null
+    private var binding: FragmentRssFormBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBottomSheetSaveBinding.inflate(inflater)
+        binding = FragmentRssFormBinding.inflate(inflater)
         return binding?.root
     }
 
@@ -37,7 +38,7 @@ class BottomSheetSaveFragment: BottomSheetDialogFragment() {
         val rssManagementSubscriber =
             Observer<RssManagementViewModel.SourceRssUiState> {uiState ->
                 if(uiState.isSuccess) {
-                    this.dismiss()
+                    Navigation.findNavController(requireView()).navigateUp()
                     Snackbar.make(requireActivity().findViewById(R.id.main_view), getString(R.string.snackbar_saved_text), Snackbar.LENGTH_LONG).show()
                 }
             }
@@ -51,7 +52,7 @@ class BottomSheetSaveFragment: BottomSheetDialogFragment() {
         }
 
         binding?.buttonCancel?.setOnClickListener {
-            this.dismiss()
+            Navigation.findNavController(requireView()).navigateUp()
         }
     }
 }

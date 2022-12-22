@@ -21,21 +21,18 @@ class RssManagementFragment: Fragment() {
         binding = FragmentRssManagementBinding.inflate(inflater)
 
         binding!!.toolbarManagement.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.action_save -> {
-                    navigateToBottomSheetSave()
-                    true
-                }
-                else -> false
-            }
+            if (it.itemId == R.id.action_save) {
+                navigateToRssForm()
+                true
+            } else false
         }
 
         return binding?.root
     }
 
-    private fun navigateToBottomSheetSave() {
+    private fun navigateToRssForm() {
         findNavController().navigate(
-            RssManagementFragmentDirections.toBottomsheetsave()
+            RssManagementFragmentDirections.toRssform()
         )
     }
 
