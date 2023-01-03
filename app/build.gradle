@@ -48,6 +48,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
+    //Fragments
+    implementation("androidx.fragment:fragment-ktx:1.5.4")
+
+    //Navigation
+    def nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
     //Room Database
     implementation "androidx.room:room-runtime:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
@@ -65,11 +73,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-simplexml:2.9.0'
 
-    //Fragments
-    implementation("androidx.fragment:fragment-ktx:1.5.4")
-
-    //Navigation
-    def nav_version = "2.5.3"
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    //LiveData: Observer
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 }
