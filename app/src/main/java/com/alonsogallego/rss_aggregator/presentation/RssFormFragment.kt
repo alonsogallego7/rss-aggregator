@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.alonsogallego.rss_aggregator.R
 import com.alonsogallego.rss_aggregator.databinding.FragmentRssFormBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -30,17 +30,19 @@ class RssFormFragment: BottomSheetDialogFragment() {
         viewModel = RssFactory().getRssManagementViewModel(
             requireContext()
         )
-        setupObservers()
         setupButtons()
     }
 
     private fun setupObservers() {
         val rssManagementSubscriber =
             Observer<RssManagementViewModel.SourceRssUiState> {uiState ->
-                if(uiState.isSuccess) {
-                    Navigation.findNavController(requireView()).navigateUp()
-                    Snackbar.make(requireActivity().findViewById(R.id.main_view), getString(R.string.snackbar_saved_text), Snackbar.LENGTH_LONG).show()
-                }
+                Snackbar.make(requireActivity().findViewById(R.id.main_view),
+                    if(uiState.isSuccess) {
+                        getString(R.string.snackbar_saved_text)
+                    } else {
+                        getString(R.string.snackbar_not_saved_text)
+                    },
+                    Snackbar.LENGTH_LONG).show()
             }
 
         viewModel?.sourceRssPublisher?.observe(viewLifecycleOwner, rssManagementSubscriber)
@@ -49,10 +51,12 @@ class RssFormFragment: BottomSheetDialogFragment() {
     private fun setupButtons() {
         binding?.buttonAdd?.setOnClickListener {
             viewModel?.saveSourceRss(binding?.nameTextInput?.text.toString(), binding?.urlTextInput?.text.toString())
+            findNavController().navigateUp()
+            setupObservers()
         }
 
         binding?.buttonCancel?.setOnClickListener {
-            Navigation.findNavController(requireView()).navigateUp()
+            findNavController().navigateUp()
         }
     }
 }
