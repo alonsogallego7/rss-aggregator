@@ -25,6 +25,6 @@ class RssManagementViewModel(private val saveSourceRss: SaveSourceRssUseCase): V
     }
 
     data class SourceRssUiState(
-        val isSuccess: Boolean
+        val isSuccess: Boolean = false
     )
 }
