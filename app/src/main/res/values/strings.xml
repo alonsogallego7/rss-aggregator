@@ -4,4 +4,11 @@
     <string name="nav_menu_item_1"> RSS </string>
     <string name="nav_menu_item_2"> Gestión </string>
     <string name="nav_menu_item_3"> Mi Perfil </string>
+    <string name="toolbar_item_1"> Save RSS</string>
+    <string name="title_management"> Gestión RSS </string>
+    <string name="input_rss_name"> Nombre del RSS</string>
+    <string name="input_rss_url">URL RSS</string>
+    <string name="button_add">Añadir</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="snackbar_saved_text">Guardado correctamente</string>
 </resources>

@@ -31,6 +31,10 @@
         android:label="Rss Management"
         tools:layout="@layout/fragment_rss_management">
 
+        <action
+            android:id="@+id/to_bottomsheetsave"
+            app:destination="@id/bottomSheetSave"/>
+
     </fragment>
 
     <fragment
@@ -40,5 +44,13 @@
         tools:layout="@layout/fragment_profile">
 
     </fragment>
+
+    <dialog
+        android:id="@+id/bottomSheetSave"
+        android:name="com.alonsogallego.rss_aggregator.presentation.BottomSheetSaveFragment"
+        android:label="Bottom Sheet Save"
+        tools:layout="@layout/fragment_bottom_sheet_save">
+
+    </dialog>
 
 </navigation>
