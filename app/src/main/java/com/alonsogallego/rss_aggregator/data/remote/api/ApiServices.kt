@@ -1,4 +1,4 @@
-package com.alonsogallego.rss_aggregator.app.data.remote.api
+package com.alonsogallego.rss_aggregator.data.remote.api
 
 import retrofit2.Call
 import retrofit2.Response

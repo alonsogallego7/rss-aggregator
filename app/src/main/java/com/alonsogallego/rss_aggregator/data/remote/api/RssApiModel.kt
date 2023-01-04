@@ -1,4 +1,4 @@
-package com.alonsogallego.rss_aggregator.app.data.remote.api
+package com.alonsogallego.rss_aggregator.data.remote.api
 
 import org.simpleframework.xml.*
 
