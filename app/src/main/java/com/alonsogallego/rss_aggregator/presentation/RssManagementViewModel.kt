@@ -3,7 +3,7 @@ package com.alonsogallego.rss_aggregator.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alonsogallego.rss_aggregator.app.domain.SaveSourceRssUseCase
+import com.alonsogallego.rss_aggregator.domain.SaveSourceRssUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

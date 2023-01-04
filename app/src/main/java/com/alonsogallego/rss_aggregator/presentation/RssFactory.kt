@@ -3,10 +3,10 @@ package com.alonsogallego.rss_aggregator.presentation
 import android.content.Context
 import androidx.room.Room
 import com.alonsogallego.app.data.db.AppDataBase
-import com.alonsogallego.rss_aggregator.app.domain.SaveSourceRssUseCase
-import com.alonsogallego.rss_aggregator.app.domain.SourceRssRepository
 import com.alonsogallego.rss_aggregator.data.SourceRssDataRepository
 import com.alonsogallego.rss_aggregator.data.local.db.SourceRssDbLocalDataSource
+import com.alonsogallego.rss_aggregator.domain.SaveSourceRssUseCase
+import com.alonsogallego.rss_aggregator.domain.SourceRssRepository
 
 class RssFactory {
     fun getRssManagementViewModel(context: Context) = RssManagementViewModel(
