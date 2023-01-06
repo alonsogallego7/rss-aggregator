@@ -11,4 +11,7 @@
     <string name="button_add">Añadir</string>
     <string name="button_cancel">Cancelar</string>
     <string name="snackbar_saved_text">Guardado correctamente</string>
+    <string name="web_name">Web Name</string>
+    <string name="url">Url</string>
+    <string name="rss_from">RSS de</string>
 </resources>
