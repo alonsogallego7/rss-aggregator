@@ -12,7 +12,7 @@ class SourceRssDataRepository(private val localSource: SourceRssLocalDataSource)
     }
 
     override suspend fun getAll(): List<SourceRssModel> {
-        TODO("Not yet implemented")
+        return localSource.getAll()
     }
 
 }
