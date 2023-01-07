@@ -18,17 +18,13 @@ class RssManagementViewModel(private val saveSourceRss: SaveSourceRssUseCase): V
             saveSourceRss.execute(webName, url)
             sourceRssPublisher.postValue(
                 SourceRssUiState(
-                    true,
-                    webName,
-                    url
+                    true
                 )
             )
         }
     }
 
     data class SourceRssUiState(
-        val isSuccess: Boolean = false,
-        val webName: String = "",
-        val url: String = ""
+        val isSuccess: Boolean = false
     )
 }

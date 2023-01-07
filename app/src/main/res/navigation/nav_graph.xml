@@ -32,8 +32,8 @@
         tools:layout="@layout/fragment_rss_management">
 
         <action
-            android:id="@+id/to_bottomsheetsave"
-            app:destination="@id/bottomSheetSave"/>
+            android:id="@+id/to_rssform"
+            app:destination="@id/rssForm"/>
 
     </fragment>
 
@@ -46,10 +46,10 @@
     </fragment>
 
     <dialog
-        android:id="@+id/bottomSheetSave"
-        android:name="com.alonsogallego.rss_aggregator.presentation.BottomSheetSaveFragment"
-        android:label="Bottom Sheet Save"
-        tools:layout="@layout/fragment_bottom_sheet_save">
+        android:id="@+id/rssForm"
+        android:name="com.alonsogallego.rss_aggregator.presentation.RssFormFragment"
+        android:label="Rss Form"
+        tools:layout="@layout/fragment_rss_form">
 
     </dialog>
 

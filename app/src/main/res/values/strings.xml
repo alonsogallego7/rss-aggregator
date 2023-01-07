@@ -11,4 +11,5 @@
     <string name="button_add">Añadir</string>
     <string name="button_cancel">Cancelar</string>
     <string name="snackbar_saved_text">Guardado correctamente</string>
+    <string name="snackbar_not_saved_text">Error: No se ha guardado con éxito</string>
 </resources>
